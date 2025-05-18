@@ -21,7 +21,7 @@ export default function Page() {
             // Redirect after last text
             router.replace('/dashboard');
         }
-    }, [step]);
+    }, [step, router]);
 
     return (
         <div style={{

@@ -1,11 +1,11 @@
 'use client'
 import React, { useState } from "react"
-import type { ReactNode } from "react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import Image from "next/image"
 
 export function LoginForm({ className, ...props }: React.ComponentProps<"div">) {
   const [email, setEmail] = useState("")
@@ -120,7 +120,7 @@ export function LoginForm({ className, ...props }: React.ComponentProps<"div">) 
             </div>
           </form>
           <div className="relative hidden bg-muted md:block mr-2">
-            <img
+            <Image
               src="/444.jpg"
               alt="Image"
               width={500}

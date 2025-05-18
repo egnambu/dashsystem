@@ -1,9 +1,8 @@
 "use client"
 
-import { TrendingUp } from "lucide-react"
 import { CartesianGrid, LabelList, Line, LineChart } from "recharts"
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { type ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 const chartData = [
   { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
