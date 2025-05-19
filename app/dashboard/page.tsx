@@ -9,12 +9,14 @@ import { useEffect } from "react"
 
 import data from "./data.json"
 import { Toaster, toast } from "sonner"
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { TrendingDownIcon } from "lucide-react"
 
 export default function Page() {
   useEffect(() => {
     const timer = setTimeout(() => {
       toast.success("You have new reports in Inbox", {
-        position: "top-center",
+        position: "top-right",
         style: {
           background: "#22c55e",
           color: "#fff",
@@ -27,7 +29,7 @@ export default function Page() {
 
   return (
     <SidebarProvider>
-      <Toaster/>
+      <Toaster />
       <AppSidebar variant="inset" />
       <SidebarInset>
         <SiteHeader />
@@ -39,6 +41,26 @@ export default function Page() {
                 <ChartAreaInteractive />
               </div>
               <DataTable data={data} />
+
+              <Card className="@container/card ml-6 mr-6">
+                <CardHeader className="relative">
+                  <CardDescription className="flex items-center justify-between gap-2 w-full">
+                    New Customers
+                    <div className="flex gap-1 rounded-lg text-xs bg-[#ebf9e2] text-[#4a6c41] border border-[#85db57] px-2 py-0.5">
+                      <TrendingDownIcon className="size-3" />
+                      -20%
+                    </div>
+                  </CardDescription>
+                  <CardTitle className="@[250px]/card:text-[60px] mt-4 text-2xl font-semibold tabular-nums">1,984</CardTitle>
+
+                </CardHeader>
+                <CardFooter className="flex-col items-start gap-1 text-sm">
+                  <div className="line-clamp-1 flex gap-2 font-medium">
+                    Down 20% this period <TrendingDownIcon className="size-4" />
+                  </div>
+                  <div className="text-muted-foreground">Acquisition needs attention</div>
+                </CardFooter>
+              </Card>
             </div>
           </div>
         </div>
